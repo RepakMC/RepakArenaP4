@@ -1,0 +1,8 @@
+name: RepakArenaP4
+version: '${version}'
+main: net.repakmc.jogar.repakarenap4.RepakArenaP4
+authors: [ mattnicee7 ]
+description: A simple arena plugin for RepakMC
+website: github.com/RepakMC
+commands:
+  arenap4:
