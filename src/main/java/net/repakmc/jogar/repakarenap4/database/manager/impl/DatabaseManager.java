@@ -25,4 +25,5 @@ public class DatabaseManager implements Manager {
         this.locations = new Locations(plugin);
         locations.createTable();
     }
+
 }

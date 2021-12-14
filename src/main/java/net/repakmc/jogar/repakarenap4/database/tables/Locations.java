@@ -5,7 +5,6 @@ import net.repakmc.jogar.repakarenap4.RepakArenaP4;
 import net.repakmc.jogar.repakarenap4.util.location.LocationParser;
 import org.bukkit.Location;
 
-import java.security.SecureRandom;
 import java.sql.SQLException;
 import java.util.*;
 

@@ -27,6 +27,7 @@ public class ArenaP4Command implements CommandExecutor {
         subCommands.add(new ArenaP4StatusSubCommand(plugin));
         subCommands.add(new ArenaP4AddLocationSubCommand(plugin));
         subCommands.add(new ArenaP4SilentSubCommand(plugin));
+        subCommands.add(new ArenaP4HelpSubCommand(plugin));
     }
 
     @Override
@@ -41,6 +42,8 @@ public class ArenaP4Command implements CommandExecutor {
             if (subCommand.getAliases().contains(args[0].toLowerCase()))
                 return subCommand.execute(sender, args);
         }
+
+        Bukkit.dispatchCommand(sender, "arenap4 help");
 
         return false;
     }

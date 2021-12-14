@@ -2,7 +2,6 @@ package net.repakmc.jogar.repakarenap4.listener;
 
 import lombok.val;
 import net.repakmc.jogar.repakarenap4.RepakArenaP4;
-import net.repakmc.jogar.repakarenap4.util.chat.ChatUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -26,4 +25,5 @@ public class PlayerDeathListener implements Listener {
             return;
 
     }
+
 }

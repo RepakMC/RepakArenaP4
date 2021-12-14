@@ -1,10 +1,8 @@
 package net.repakmc.jogar.repakarenap4.command.subcommand.impl;
 
-import lombok.val;
 import net.repakmc.jogar.repakarenap4.RepakArenaP4;
 import net.repakmc.jogar.repakarenap4.command.subcommand.SubCommand;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
 import java.util.Arrays;
 import java.util.List;

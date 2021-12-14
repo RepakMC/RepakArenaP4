@@ -2,7 +2,6 @@ package net.repakmc.jogar.repakarenap4.listener;
 
 import lombok.val;
 import net.repakmc.jogar.repakarenap4.RepakArenaP4;
-import net.repakmc.jogar.repakarenap4.util.chat.ChatUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -17,11 +16,11 @@ public class PlayerKillListener implements Listener {
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
 
+    // to fix
     @EventHandler
     public void onDeath(PlayerDeathEvent event) {
         val player = event.getEntity().getPlayer();
         val killer = event.getEntity().getKiller();
-
 
     }
 

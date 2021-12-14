@@ -15,7 +15,7 @@ public class PlayerHitListener implements Listener {
         this.plugin = plugin;
     }
 
-    // Right
+    // to fix
     @EventHandler
     public void onHit(EntityDamageByEntityEvent event) {
         if (!(event.getEntity() instanceof Player) && !(event.getDamager() instanceof Player))
@@ -27,4 +27,5 @@ public class PlayerHitListener implements Listener {
             event.setCancelled(true);
 
     }
+
 }

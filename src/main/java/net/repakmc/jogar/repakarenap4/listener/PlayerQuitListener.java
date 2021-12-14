@@ -29,4 +29,5 @@ public class PlayerQuitListener implements Listener {
 
         plugin.getGameManager().getPlayersInArena().forEach(it -> it.sendMessage(ChatUtils.colorize("&c[ARENA P4] O jogador &7" + player.getName() + "&c arregou e saiu do servidor.")));
     }
+
 }

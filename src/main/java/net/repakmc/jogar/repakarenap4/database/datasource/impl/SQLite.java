@@ -34,4 +34,5 @@ public class SQLite implements DataSource {
     public void closeConnection() {
         // Not used
     }
+
 }
