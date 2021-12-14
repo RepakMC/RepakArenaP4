@@ -43,7 +43,7 @@ public class ArenaP4JoinSubCommand implements SubCommand {
         }
 
         if (!(PlayerUtil.inventoryIsCleared(player))) {
-            player.sendMessage(ChatUtils.colorize("Limpe seu inventário para poder entrar na arena p4."));
+            player.sendMessage(ChatUtils.colorize("&cLimpe seu inventário para poder entrar na arena p4."));
             return false;
         }
 

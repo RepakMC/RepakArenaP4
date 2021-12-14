@@ -24,9 +24,11 @@ public class GameManager {
     @Getter private final CooldownManager cooldownManager;
 
     @Getter private final List<Player> playersInArena;
-    private final Map<String, Integer> killStreak;
+    @Getter private final Map<String, Integer> killStreak;
 
-    private final Location exit;
+    @Getter private List<Player> silentPlayers;
+
+    @Getter private final Location exit;
 
     private final ItemStack[] kit;
 
@@ -35,6 +37,7 @@ public class GameManager {
         this.playersInArena = new ArrayList<>();
         this.killStreak = new HashMap<>();
         this.cooldownManager = new CooldownManager();
+        this.silentPlayers = new ArrayList<>();
         this.kit = ItemSerializer.itemStackArrayFromBase64(plugin.getConfig().getString("Arena.Kit"));
         this.exit = LocationParser.stringToLocation(plugin.getConfig().getString("Arena.Exit"));
     }
@@ -46,7 +49,7 @@ public class GameManager {
         giveKit(player);
 
         for (Player otherPlayer : Bukkit.getOnlinePlayers()) {
-            if (!(playersInArena.contains(otherPlayer)))
+            if (!(playersInArena.contains(otherPlayer)) && !(silentPlayers.contains(otherPlayer)))
                 otherPlayer.sendMessage(ChatUtils.colorize("&c[ARENA P4] O jogador " + player.getName() + " entrou na arena. Para entrar use: /arenap4 entrar."));
         }
 
@@ -62,7 +65,6 @@ public class GameManager {
         this.playersInArena.remove(player);
         PlayerUtil.onLeave(player);
         killStreak.remove(player.getName());
-        player.teleport(exit);
     }
 
     public void addKill(Player player) {
@@ -78,14 +80,6 @@ public class GameManager {
                 it.sendMessage(ChatUtils.colorize("O jogador " + player.getName() + "alcancou o kill-streak de " + killStreak.get(player.getName())));
             });
         }
-    }
-
-    public void removeKillStreak(Player target, Player killer) {
-        if (killStreak.get(target.getName()) > 5) {
-            playersInArena.forEach(it -> it.sendMessage("O jogador " + target.getName() + " morreu com a kill-streak de " + killStreak.get(target.getName()) + " para o " + killer.getName()));
-        }
-
-        killStreak.remove(target.getName());
     }
 
     public void saveAllPlayers() {

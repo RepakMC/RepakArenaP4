@@ -60,10 +60,4 @@ public class TimeUtils {
         return String.format("%dy %dM %dw %dd %dh %dm %ds", years, months, weeks, days, hours, minutes, seconds);
     }
 
-    public String getTimeStamp() {
-        val simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-
-        return simpleDateFormat.format(new Date());
-    }
-
 }

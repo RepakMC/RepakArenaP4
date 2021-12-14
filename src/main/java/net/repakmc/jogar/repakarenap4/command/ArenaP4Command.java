@@ -2,10 +2,7 @@ package net.repakmc.jogar.repakarenap4.command;
 
 import net.repakmc.jogar.repakarenap4.RepakArenaP4;
 import net.repakmc.jogar.repakarenap4.command.subcommand.SubCommand;
-import net.repakmc.jogar.repakarenap4.command.subcommand.impl.ArenaP4AddLocationSubCommand;
-import net.repakmc.jogar.repakarenap4.command.subcommand.impl.ArenaP4JoinSubCommand;
-import net.repakmc.jogar.repakarenap4.command.subcommand.impl.ArenaP4LeaveSubCommand;
-import net.repakmc.jogar.repakarenap4.command.subcommand.impl.ArenaP4StatusSubCommand;
+import net.repakmc.jogar.repakarenap4.command.subcommand.impl.*;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -29,6 +26,7 @@ public class ArenaP4Command implements CommandExecutor {
         subCommands.add(new ArenaP4LeaveSubCommand(plugin));
         subCommands.add(new ArenaP4StatusSubCommand(plugin));
         subCommands.add(new ArenaP4AddLocationSubCommand(plugin));
+        subCommands.add(new ArenaP4SilentSubCommand(plugin));
     }
 
     @Override

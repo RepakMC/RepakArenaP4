@@ -36,6 +36,7 @@ public class ArenaP4LeaveSubCommand implements SubCommand {
         }
 
         plugin.getGameManager().removePlayer(player);
+        player.teleport(plugin.getGameManager().getExit());
 
         return false;
     }

@@ -25,7 +25,6 @@ public class ArenaP4StatusSubCommand implements SubCommand {
     @Override
     public boolean execute(CommandSender sender, String[] args) {
 
-        val player = (Player) sender;
 
         return false;
     }
